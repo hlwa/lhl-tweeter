@@ -1,0 +1,48 @@
+button {
+  background-color: #008CBA;
+  border: 1px;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight:bold;
+  margin-bottom: 5px;
+}
+
+label {
+  display: none;
+}
+
+.new-tweet {
+  width:100%;
+}
+
+.new-tweet h2 {
+  display: none;
+}
+
+#tweet-text {
+  width: 100%;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom: 3px,solid,slategray;
+  background-color: transparent;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.counter {
+  color:slategray;
+}

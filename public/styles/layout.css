@@ -23,15 +23,19 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ html {
+  height: 100%;
+ }
  body {
   font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
  }
 
  main {
    width: 90%;
    display: flex;
    justify-content: center;
-   background-color: #00bceb;
+   background-color: #f4f1ec;
    z-index: 2;
    margin-left:5%;
    margin-top:11.65em;
