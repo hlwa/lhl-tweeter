@@ -1,12 +1,25 @@
-nav {
+body nav {
   height: 120px;
   width: 100%;
   background-color: #4056A1;
-  font: #FFFFFF;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-span {
+nav span {
   font-family: 'Bungee', sans-serif;
+  color: #FFFFFF;
+}
+.fa-solid.fa-angles-down {
+  display: flex;
+  justify-content: center;
+  color:red;
+}
+
+nav div div{
+  color: #FFFFFF;
+  font-size: 20px;
 }
