@@ -26,3 +26,13 @@ body {
  body {
   font-family: 'Source Sans Pro', sans-serif;
  }
+
+ main {
+   width: 90%;
+   display: flex;
+   justify-content: center;
+   background-color: #00bceb;
+   z-index: 2;
+   margin-left:5%;
+   margin-top:11.65em;
+ }
