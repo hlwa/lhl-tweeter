@@ -5,7 +5,7 @@ $(document).ready(function() {
     const inputLengh = $(this).val().length + 1;
     const counter = $(this).parent().get(0).counter;
     //set the value of counter
-    counter.innerText = inputLengh > 140 ? 140 - inputLengh : inputLengh;
+    counter.innerText = 140 - inputLengh;
  
   });
 
