@@ -1,11 +1,11 @@
 // ensure the DOM has loaded.
 $(document).ready(function() {
   // register two events to the tweets area, when mouse over/out, the shadow will on/off;
-  $(".tweet-list").on('mouseover', function() {
+  $(".tweet-list article").on('mouseover', function() {
     $(this).css("box-shadow", '4px 4px slategrey');
   });
 
-  $(".tweet-list").on('mouseout', function() {
+  $(".tweet-list article").on('mouseout', function() {
     $(this).css("box-shadow", '');
   });
 
