@@ -11,11 +11,12 @@ button {
 }
 
 label {
-  display: none;
+  color:slategrey;
 }
 
 .new-tweet {
   width:100%;
+  margin-bottom: 1.3em;
 }
 
 .new-tweet h2 {
@@ -45,4 +46,8 @@ form div {
 
 .counter {
   color:slategray;
+}
+
+form {
+  margin-top: 1em;
 }
