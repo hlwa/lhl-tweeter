@@ -51,3 +51,10 @@ form div {
 form {
   margin-top: 1em;
 }
+
+.alert {
+  color:red;
+  font-size: 30px;
+  border: solid;
+  display: none;
+}
