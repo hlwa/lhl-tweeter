@@ -57,9 +57,15 @@ const sentTweets = () => {
       return;
     }
     //post data to sever
-    //console.log($page);
-    const url = '/';
-    $.post(url, '$tweet');
+    const url = '/tweets';
+    $.post(url, $tweet);
+    const tar = $(this).parent().parent();
+    console.log(tar);
+    //loadTweets();
+    // $.ajax({
+    //   success: $.post('/tweets', $tweet),
+    //   complete:loadTweets()
+    // });
   });
 };
 
@@ -88,5 +94,6 @@ $(document).ready(function() {
   sentTweets();
   //call to get and show tweets
   loadTweets();
+  
 });
 
