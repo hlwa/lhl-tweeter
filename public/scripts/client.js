@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 const createTweetElement = tweetData => {
   let tweetElement = `
   <article>
@@ -39,7 +38,7 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweets[tweet]);
     // takes return value and appends it to the tweets container
     $('.tweet-list').append($tweet);
-    console.log($tweet);
+    //console.log($tweet);
   }
 };
 
@@ -58,7 +57,9 @@ const sentTweets = () => {
       return;
     }
     //post data to sever
-    $.post($tweet);
+    //console.log($page);
+    const url = '/';
+    $.post(url, '$tweet');
   });
 };
 
