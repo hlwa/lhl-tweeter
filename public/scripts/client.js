@@ -3,6 +3,34 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const addEvents = () => {
+  
+  // register two events to the tweets area, when mouse over/out, the shadow will on/off;
+  const tweet = $('.tweet-list article');
+  $(tweet).on('mouseover', function() {
+    //console.log(tweet);
+    $(this).css("box-shadow", '4px 4px slategrey');
+    
+  });
+
+  $(tweet).on('mouseout', function() {
+    $(this).css("box-shadow", '');
+  });
+
+  // register two pair of events to the tweets icon area, when mouse over/out, the color and cursor will change;
+  const obj = $(tweet).find('i');
+  for (const icon of obj) {
+    $(icon).on('mouseover', function() {
+      $(this).css("cursor", 'hand');
+      $(this).css("color", 'orange');
+    });
+    $(icon).on('mouseout', function() {
+      $(this).css("cursor", 'pointer');
+      $(this).css("color", '');
+    });
+  }
+};
+
 const createTweetElement = tweetData => {
   let tweetElement = `
   <article>
@@ -38,7 +66,8 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweets[tweet]);
     // takes return value and appends it to the tweets container
     $('.tweet-list').append($tweet);
-    //console.log($tweet);
+    //addEvents
+    addEvents();
   }
 };
 
@@ -76,8 +105,8 @@ const loadTweets = () => {
     method: 'GET',
   })
     .done((results) => {
-      console.log(results);
-      renderTweets(results);
+      //console.log(results);
+      renderTweets(results);//
     })
     .fail((err) => {
       console.log(`Error: ${err.message}`);
