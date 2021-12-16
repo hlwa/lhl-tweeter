@@ -59,13 +59,11 @@ const sentTweets = () => {
     //post data to sever
     const url = '/tweets';
     $.post(url, $tweet);
-    const tar = $(this).parent().parent();
-    console.log(tar);
-    //loadTweets();
-    // $.ajax({
-    //   success: $.post('/tweets', $tweet),
-    //   complete:loadTweets()
-    // });
+    const tar = $(this).parent().siblings('.tweet-list');
+    //clear page
+    $(tar).empty();
+    //reload from database
+    loadTweets();
   });
 };
 
