@@ -27,7 +27,7 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 const createTweetElement = tweetData => {
   let tweetElement = `
@@ -71,6 +71,41 @@ const renderTweets = function(tweets) {
   }
 };
 
-$(document).ready(function() {
-  renderTweets(data);
+$(document).ready(function() {//#tweet-text
+  
+  $("#form").submit(function(event) {
+    event.preventDefault();
+    //const textI = $(this).children('#tweet-text').val();
+    const $tweet = $(this).serialize();
+    $.post($tweet);
+    console.log($tweet);
+  });
+
+  const loadTweets = () => {
+  // sending the requet to the TV Maze API
+    const url = 'http://localhost:8080/tweets';
+    $.ajax({
+      url: url,
+      method: 'GET',
+    })
+      .done((results) => {
+        console.log(results); // array of objects
+        renderTweets(results);
+
+      // with the results => create the HTML element => attach to the DOM
+      })
+      .fail((err) => {
+        console.log(`Error: ${err.message}`);
+      })
+      .always(() => {
+        console.log('request to http://localhost:8080/tweets done');
+      });
+    loadTweets();//call to load
+  };
+  
+
+  
+
+  //renderTweets(data);
 });
+
