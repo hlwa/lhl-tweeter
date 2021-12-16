@@ -30,6 +30,12 @@ const addEvents = () => {
     });
   }
 };
+//Preventing XSS with Escaping
+const escapeF = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = tweetData => {
   let tweetElement = `
@@ -42,7 +48,7 @@ const createTweetElement = tweetData => {
     <div>${tweetData.user.handle}</div>
   </header>
   <p id='content'>
-  ${tweetData.content.text}
+  ${escapeF(tweetData.content.text)}
   </p>
   <footer>
   <div>${timeago.format(tweetData.created_at)}</div>
