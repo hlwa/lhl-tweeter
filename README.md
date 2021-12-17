@@ -16,3 +16,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshots of desktop Tweet App"](https://github.com/hailan6257/lhl-tweeter/blob/master/docs/tweet-desktop.png?raw=true)
+!["Screenshots of mobile Tweet App"](https://github.com/hailan6257/lhl-tweeter/blob/master/docs/tweet-mobile.png?raw=true)
