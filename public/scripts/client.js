@@ -31,7 +31,7 @@ const addEvents = () => {
   }
 };
 //Preventing XSS with Escaping
-const escapeF = function (str) {
+const escapeF = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -47,7 +47,7 @@ const createTweetElement = tweetData => {
     </div>
     <div>${tweetData.user.handle}</div>
   </header>
-  <p id='content'>
+  <p class = 'p'>
   ${escapeF(tweetData.content.text)}
   </p>
   <footer>
@@ -67,7 +67,7 @@ const createTweetElement = tweetData => {
 
 const renderTweets = function(tweets) {
   // loops through tweets
-  for (const tweet in tweets) {
+  for (const tweet in tweets.reverse()) {
   // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweets[tweet]);
     // takes return value and appends it to the tweets container
@@ -79,27 +79,38 @@ const renderTweets = function(tweets) {
 
 //call to post tweets
 const sentTweets = () => {
-  $("#form").submit(function(event) {
-    event.preventDefault();
-    const $tweet = $(this).serialize();
-    const tweetContent = $tweet.split('=')[1];
-    if (tweetContent === '' || tweetContent === null) {
-      alert('Content is empty!');
-      return;
+  
+  $("#form").submit(
+    function(event) {
+      event.preventDefault();
+      const $tweet = $(this).serialize();
+      const tweetContent = $tweet.split('=')[1];
+      if (tweetContent === '' || tweetContent === null) {
+        $(this).parent().find("div.alert.1").show();
+        return;
+      }
+      if (tweetContent.length > 140) {
+        $(this).parent().find("div.alert.2").show();
+        return;
+      }
+      //clear page
+      const tar = $(this).parent().siblings('.tweet-list');
+      $(tar).empty();
+      //post data to sever
+      const url = '/tweets';
+      $.post(url, $tweet, () => {
+        loadTweets();//make sure the post done then do the load
+      });
+      //clear the form input
+      $(this).find('#tweet-text').val('');
+      //restore the counter
+      $(this).find('.counter').val('140');
+      //hide error message
+      $(this).parent().find("div.alert.1").hide();
+      $(this).parent().find("div.alert.2").hide();
     }
-    if (tweetContent.length > 140) {
-      alert(`Content is too long`);
-      return;
-    }
-    //post data to sever
-    const url = '/tweets';
-    $.post(url, $tweet);
-    const tar = $(this).parent().siblings('.tweet-list');
-    //clear page
-    $(tar).empty();
-    //reload from database
-    loadTweets();
-  });
+  );
+  
 };
 
 //call to get and show tweets
@@ -111,22 +122,23 @@ const loadTweets = () => {
     method: 'GET',
   })
     .done((results) => {
-      //console.log(results);
       renderTweets(results);//
     })
     .fail((err) => {
       console.log(`Error: ${err.message}`);
     })
     .always(() => {
-      console.log('request to http://localhost:8080/tweets done');
+      const time = new Date();
+      console.log(`request to http://localhost:8080/tweets done${time}`);
     });
 };
 
 $(document).ready(function() {
-  //call to post tweets
-  sentTweets();
+
   //call to get and show tweets
   loadTweets();
-  
-});
 
+  //call to post tweets
+  sentTweets();
+
+});

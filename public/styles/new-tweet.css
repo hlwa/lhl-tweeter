@@ -30,6 +30,7 @@ label {
   border-right:none;
   border-bottom: 3px,solid,slategray;
   background-color: transparent;
+  color: slategrey;
 }
 
 form div {
