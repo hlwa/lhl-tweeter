@@ -15,6 +15,7 @@ body nav {
 nav span {
   font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
+  font-size: 100%;
 }
 .fa-solid.fa-angles-down {
   display: flex;
@@ -24,5 +25,14 @@ nav span {
 
 nav div div{
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 100%;
+}
+
+ /*
+ * For desktop style
+ */
+@media only screen and (min-width: 768px) {
+  body nav {
+    background-color: #050f68;
+  }
 }

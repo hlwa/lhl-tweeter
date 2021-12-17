@@ -1,24 +1,15 @@
-// // ensure the DOM has loaded.
-// $(document).ready(function() {
-//   // register two events to the tweets area, when mouse over/out, the shadow will on/off;
-//   $(".tweet-list article").on('mouseover', function() {
-//     $(this).css("box-shadow", '4px 4px slategrey');
-//   });
+// ensure the DOM has loaded.
+$(document).ready(function() {
+  // register two pair of events to the tweets icon area, when mouse over/out, the color and cursor will change;
+  const btn = $("button");
+  $(btn).on('mouseover', function() {
+    $(this).css("cursor", 'hand');
+    $(this).css("color", 'pink');
+  });
+  $(btn).on('mouseout', function() {
+    $(this).css("cursor", 'pointer');
+    $(this).css("color", '');
+  });
 
-//   $(".tweet-list article").on('mouseout', function() {
-//     $(this).css("box-shadow", '');
-//   });
-
-//   // register two pair of events to the tweets icon area, when mouse over/out, the color and cursor will change;
-//   const obj = $("#icon i");
-//   for (const icon of obj) {
-//     $(icon).on('mouseover', function() {
-//       $(this).css("cursor", 'hand');
-//       $(this).css("color", 'orange');
-//     });
-//     $(icon).on('mouseout', function() {
-//       $(this).css("cursor", 'pointer');
-//       $(this).css("color", '');
-//     });
-//   }
-// });
+  //register an event that when click the arrow, the page will scrow down to input area;
+});
