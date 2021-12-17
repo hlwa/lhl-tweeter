@@ -1,41 +1,33 @@
-.tweet-list header {
+.tweet-list article {
+  border-style: solid;
+  padding: 1em;
+}
+.tweet-list article p {
+  padding: 1em;
+  border-style: solid;
+  border-color: slategrey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 20%;
+}
+.tweet-list article header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1em;
 }
-
-.tweet-list article {
-  border-style:solid;
-  padding: 1em;
-
-}
-
-.tweet-list header div {
+.tweet-list article header div {
   display: flex;
-  justify-content:start;
+  justify-content: start;
   align-items: center;
-  color:slategrey;
+  color: slategrey;
 }
-
-.tweet-list header img {
-  width:15%;
+.tweet-list article header div img {
+  width: 15%;
   padding: 0;
-  margin-right:1em;
+  margin-right: 1em;
 }
-
-article > p {
-  padding: 1em;
-  border-style: solid;
-  border-color: slategrey;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  height:20%;
-}
-
-.tweet-list footer {
+.tweet-list article footer {
   display: flex;
   justify-content: space-between;
-
 }
-

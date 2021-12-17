@@ -1,62 +1,54 @@
-button {
-  background-color: #008CBA;
-  border: 1px;
-  color: white;
-  padding: 1% 1%;
-  text-align: center;
-  text-decoration: none;
-  font-size: 100%;
-  font-weight:bold;
-  margin-bottom: 5px;
-  border-radius: 5%;
-}
-
-label {
-  color:slategrey;
-}
-
 .new-tweet {
-  width:100%;
+  width: 100%;
   margin-bottom: 1.3em;
 }
-
 .new-tweet h2 {
   display: none;
 }
-
-#tweet-text {
+.new-tweet .alert {
+  color: red;
+  font-size: 24px;
+  border: solid;
+  display: none;
+}
+.new-tweet form {
+  margin-top: 1em;
+}
+.new-tweet form label {
+  color: slategrey;
+}
+.new-tweet form #tweet-text {
   width: 100%;
-  border-top:none;
-  border-left:none;
-  border-right:none;
-  border-bottom: 3px,solid,slategray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px, solid, slategrey;
   background-color: transparent;
   color: slategrey;
 }
-
-form div {
+.new-tweet form div {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-items: center;
-  color: #FFFFFF;
+  color: #f4f1ec;
   font-weight: bold;
   padding-left: 2em;
   padding-right: 2em;
 }
-
-.counter {
-  color:slategray;
+.new-tweet form div button {
+  background-color: #0d72e6;
+  border: 1px;
+  color: #f4f1ec;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border-radius: 5%;
 }
-
-form {
-  margin-top: 1em;
-}
-
-.alert {
-  color:red;
-  font-size: 100%;
-  border: solid;
-  display: none;
+.new-tweet form div .counter {
+  color: slategrey;
 }

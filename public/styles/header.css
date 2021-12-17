@@ -1,49 +1,48 @@
-
 nav + header {
   position: absolute;
-  top:0;
+  top: 0;
   height: 400px;
   width: 100%;
-  background-color: #00bceb;
+  background-color: #0d72e6;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
-
-#avatar {
+nav + header #avatar {
   display: flex;
   justify-content: center;
+  /*
+  * For desktop style
+  */
 }
-
-div img {
-  width:65%;
+nav + header #avatar img {
+  width: 65%;
   padding-top: 110px;
 }
-
-h2 {
-  color:#FFFFFF;
+@media only screen and (min-width: 768px) {
+  nav + header #avatar img {
+    padding-top: 20px;
+  }
+}
+nav + header h2 {
+  color: #f4f1ec;
   margin-top: 0;
-  font-size: 1.1em;
+  font-size: 31.2px;
 }
 
- /*
- * For desktop style
- */
+/*
+* For desktop style
+*/
 @media only screen and (min-width: 768px) {
   nav + header {
     position: fixed;
     width: 40%;
     float: left;
-    border:solid;
+    border: solid;
     border-color: #f4f1ec;
     border-width: 3em;
     margin-top: 120px;
   }
-
-  div img {
-    padding-top: 20px;
-  }
-
 }

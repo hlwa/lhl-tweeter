@@ -1,0 +1,41 @@
+$border-color:slategrey;
+$body-font-size:24px;
+
+.tweet-list article {
+  border-style:solid;
+  padding: 1em;
+
+  p {
+    padding: 1em;
+    border-style: solid;
+    border-color: $border-color;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    height:20%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    div {
+      display: flex;
+      justify-content:start;
+      align-items: center;
+      color:$border-color;
+      img {
+        width:15%;
+        padding: 0;
+        margin-right:1em;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+  
+  }
+
+}

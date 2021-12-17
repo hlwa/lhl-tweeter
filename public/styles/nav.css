@@ -6,33 +6,30 @@ body nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   z-index: 1;
   position: fixed;
-  top:0;
+  top: 0;
 }
-
-nav span {
-  font-family: 'Bungee', sans-serif;
-  color: #FFFFFF;
-  font-size: 100%;
+body nav span {
+  font-family: "Bungee", sans-serif;
+  color: #f4f1ec;
+  font-size: 31.2px;
 }
-.fa-solid.fa-angles-down {
+body nav div div {
+  color: #f4f1ec;
+  font-size: 24px;
+}
+body nav div div .fa-solid.fa-angles-down {
   display: flex;
   justify-content: center;
-  color:red;
+  color: red;
 }
 
-nav div div{
-  color: #FFFFFF;
-  font-size: 100%;
-}
-
- /*
- * For desktop style
- */
+/*
+* For desktop style
+*/
 @media only screen and (min-width: 768px) {
   body nav {
-    background-color: #050f68;
+    background-color: #0d72e6;
   }
 }

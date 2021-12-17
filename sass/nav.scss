@@ -1,0 +1,48 @@
+$background-color: #0d72e6;
+$base-color:#f4f1ec;
+$warn-color:red;
+$body-font-size:24px;
+body nav {
+  height: 120px;
+  width: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1;
+  position: fixed;
+  top:0;
+
+  span {
+    font-family: 'Bungee', sans-serif;
+    color: $base-color;
+    font-size:  $body-font-size * 1.3;
+  }
+
+  div div{
+    color: $base-color;
+    font-size:  $body-font-size;
+    .fa-solid.fa-angles-down {
+      display: flex;
+      justify-content: center;
+      color:$warn-color;
+    }
+  }
+
+
+}
+
+
+
+
+
+ /*
+ * For desktop style
+ */
+@media only screen and (min-width: 768px) {
+  body nav {
+    background-color: $background-color;
+  }
+}

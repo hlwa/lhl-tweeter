@@ -1,0 +1,52 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ $base-color:#f4f1ec;
+ $border-color:slategrey;
+ $body-font-size:24px;
+ html {
+  box-sizing: border-box;
+  height: 100%;
+  body {
+    color: $border-color;
+    background-color: $base-color;
+    font-size: $body-font-size;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 100%;
+    main {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $base-color;
+      z-index: 2;
+      margin-left:5%;
+      margin-top:400px;
+      padding-bottom: 1%;
+    }
+    /*
+    * For desktop style
+    */
+    @media only screen and (min-width: 768px) {
+      main {
+        float:right;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        background-color: $base-color;
+        margin-top:120px;
+        padding-bottom: 1%;
+        padding-right:1em;
+      }
+     }
+  }  
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+

@@ -3,58 +3,44 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-
 html {
   box-sizing: border-box;
+  height: 100%;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/*
- * Global layout stuff
- */
-
-body {
-  color: #545149;
+html body {
+  color: slategrey;
   background-color: #f4f1ec;
-  font-size: 1.5em;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
+  /*
+  * For desktop style
+  */
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
- html {
-  height: 100%;
- }
- body {
-  font-family: 'Source Sans Pro', sans-serif;
-  height: 100%;
- }
- main {
-   width: 90%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   background-color: #f4f1ec;
-   z-index: 2;
-   margin-left:5%;
-   margin-top:400px;
-   padding-bottom: 1%;
- }
-
- /*
- * For desktop style
- */
- @media only screen and (min-width: 768px) {
-  main {
-    float:right;
+html body main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f4f1ec;
+  z-index: 2;
+  margin-left: 5%;
+  margin-top: 400px;
+  padding-bottom: 1%;
+}
+@media only screen and (min-width: 768px) {
+  html body main {
+    float: right;
     width: 60%;
     display: flex;
     justify-content: center;
     background-color: #f4f1ec;
-    margin-top:120px;
+    margin-top: 120px;
     padding-bottom: 1%;
-    padding-right:1em;
+    padding-right: 1em;
   }
- }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
