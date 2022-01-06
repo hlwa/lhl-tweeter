@@ -84,7 +84,10 @@ const sentTweets = () => {
     function(event) {
       event.preventDefault();
       const $tweet = $(this).serialize();
-      const tweetContent = $tweet.split('=')[1];
+      // const $tweet = $(this).children('textarea').val();
+      const tweetContent = $(this).children('textarea').val();
+      console.log($tweet);
+      console.log(tweetContent.length);
       if (tweetContent === '' || tweetContent === null) {
         $(this).parent().find("div.alert.1").show();
         return;
